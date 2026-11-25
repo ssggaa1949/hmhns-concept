@@ -4,146 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>机器增强的人机混合神经系统 · BRS &amp; StRS</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
 <style>
   :root{
-    --bg:#070b16;
-    --bg2:#0c1426;
-    --card:#101a30;
-    --card2:#14203c;
-    --line:#1f3055;
-    --cyan:#22d3ee;
-    --cyan2:#0ea5b7;
-    --blue:#3b82f6;
-    --text:#e6edf7;
-    --muted:#93a4c4;
-    --warn:#f59e0b;
-    --good:#34d399;
-    --bad:#f87171;
+    --bg:#F5F2EC;
+    --paper:#FFFFFF;
+    --ink:#222A26;
+    --ink2:#4A524D;
+    --muted:#6E6A5E;
+    --line:#E5DFD2;
+    --green:#2F5D50;
+    --green-soft:#E9F0ED;
+    --ochre:#9A6B2F;
+    --ochre-soft:#F5ECDD;
+    --navy:#33506B;
+    --navy-soft:#EAEFF3;
+    --red:#A8443A;
+    --red-soft:#F7E9E7;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Segoe UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
-    background:var(--bg);color:var(--text);line-height:1.75;
-    overflow-x:hidden;
+    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.75;
+    -webkit-font-smoothing:antialiased;
   }
-  /* ===== Hero ===== */
-  .hero{
-    position:relative;padding:90px 24px 70px;text-align:center;
-    background:radial-gradient(ellipse at 50% -10%, #12325e 0%, #070b16 60%);
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";position:absolute;inset:0;
-    background-image:
-      radial-gradient(circle at 20% 30%, rgba(34,211,238,.12) 0, transparent 3px),
-      radial-gradient(circle at 70% 60%, rgba(59,130,246,.12) 0, transparent 3px),
-      radial-gradient(circle at 40% 80%, rgba(34,211,238,.08) 0, transparent 3px);
-    background-size:120px 120px,180px 180px,150px 150px;
-    animation:drift 30s linear infinite;
-    pointer-events:none;
-  }
-  @keyframes drift{from{background-position:0 0,0 0,0 0}to{background-position:120px 240px,-180px 360px,150px -300px}}
-  .tag{
-    display:inline-block;padding:5px 14px;border:1px solid var(--cyan);
-    border-radius:999px;color:var(--cyan);font-size:13px;letter-spacing:2px;
-    margin-bottom:22px;background:rgba(34,211,238,.08);
-  }
-  h1{
-    font-size:clamp(28px,5vw,52px);font-weight:800;letter-spacing:1px;
-    background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--blue) 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    position:relative;
-  }
-  .subtitle{color:var(--muted);max-width:780px;margin:18px auto 0;font-size:16px;position:relative}
-  .meta{margin-top:26px;color:var(--muted);font-size:13px;position:relative}
-  .meta b{color:var(--cyan);font-weight:600}
-
-  /* ===== Nav ===== */
-  nav{
-    position:sticky;top:0;z-index:50;background:rgba(7,11,22,.92);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-    display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:10px 12px;
-  }
-  nav a{
-    color:var(--muted);text-decoration:none;font-size:13.5px;padding:6px 12px;
-    border-radius:6px;transition:.2s;
-  }
-  nav a:hover{color:var(--cyan);background:rgba(34,211,238,.08)}
-
-  /* ===== Layout ===== */
-  .wrap{max-width:1100px;margin:0 auto;padding:50px 22px}
-  section{margin-bottom:60px}
-  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-  .sec-num{
-    flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-    background:linear-gradient(135deg,var(--cyan),var(--blue));color:#04121f;
-    font-weight:800;font-size:18px;
-  }
-  .sec-head h2{font-size:26px;font-weight:700}
+  .hero{position:relative;padding:76px 24px 54px;text-align:center;background:var(--bg);border-bottom:1px solid var(--line)}
+  .tag{display:inline-block;padding:6px 16px;border:1px solid var(--line);border-radius:999px;color:var(--green);font-size:12px;letter-spacing:.24em;margin-bottom:24px;background:var(--paper)}
+  h1{font-family:"Noto Serif SC",serif;font-size:clamp(27px,4.4vw,42px);font-weight:700;letter-spacing:.02em;color:var(--ink);line-height:1.32}
+  .subtitle{color:var(--muted);max-width:760px;margin:18px auto 0;font-size:15px}
+  .meta{margin-top:24px;color:var(--muted);font-size:13px}
+  .meta b{color:var(--green);font-weight:600}
+  nav{position:sticky;top:0;z-index:50;background:rgba(245,242,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:10px 12px}
+  nav a{color:var(--ink2);text-decoration:none;font-size:13.5px;padding:6px 12px;border-radius:6px;transition:.2s}
+  nav a:hover{color:var(--green);background:var(--green-soft)}
+  .wrap{max-width:1060px;margin:0 auto;padding:46px 22px}
+  section{margin-bottom:54px}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+  .sec-num{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--green-soft);color:var(--green);border:1px solid var(--line);font-family:"Noto Serif SC",serif;font-weight:700;font-size:17px}
+  .sec-head h2{font-family:"Noto Serif SC",serif;font-size:23px;font-weight:700;color:var(--ink)}
   .sec-head small{display:block;color:var(--muted);font-size:13px;font-weight:400;margin-top:2px}
-
-  .card{
-    background:linear-gradient(180deg,var(--card) 0%,var(--bg2) 100%);
-    border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:18px;
-  }
-  .card h3{
-    font-size:17px;color:var(--cyan);margin-bottom:12px;
-    border-left:3px solid var(--cyan);padding-left:10px;
-  }
-  .card h4{font-size:15px;color:#cfe6ff;margin:16px 0 8px}
-  .card p{color:#cdd8ec;margin-bottom:10px;font-size:14.5px}
-  .card ul,.card ol{margin:8px 0 8px 22px;color:#cdd8ec;font-size:14.5px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin-bottom:18px;box-shadow:0 1px 2px rgba(34,42,38,.05)}
+  .card h3{font-size:16px;color:var(--green);margin-bottom:12px;font-weight:700;border-left:3px solid var(--green);padding-left:11px}
+  .card h4{font-size:14.5px;color:var(--ink);margin:15px 0 8px;font-weight:600}
+  .card p{color:var(--ink2);margin-bottom:10px;font-size:14.5px}
+  .card ul,.card ol{margin:8px 0 8px 22px;color:var(--ink2);font-size:14.5px}
   .card li{margin-bottom:6px}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media(max-width:760px){.grid2{grid-template-columns:1fr}}
-
-  .badge{
-    display:inline-block;padding:2px 10px;border-radius:6px;font-size:12px;
-    background:rgba(34,211,238,.12);color:var(--cyan);border:1px solid rgba(34,211,238,.3);
-    margin-right:6px;
-  }
-  .badge.warn{background:rgba(245,158,11,.12);color:var(--warn);border-color:rgba(245,158,11,.3)}
-  .badge.good{background:rgba(52,211,153,.12);color:var(--good);border-color:rgba(52,211,153,.3)}
-
-  /* ===== Table ===== */
+  .badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:12px;background:var(--green-soft);color:var(--green);border:1px solid var(--line);margin-right:6px}
+  .badge.warn{background:var(--ochre-soft);color:var(--ochre);border-color:var(--line)}
+  .badge.good{background:var(--green-soft);color:var(--green);border-color:var(--line)}
   table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
   th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-  th{background:#16264a;color:var(--cyan);font-weight:600}
-  tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-  td code{color:var(--cyan);font-size:12.5px}
-
-  /* ===== ConOps / OpsCon 对比 ===== */
+  th{background:#F1EEE5;color:var(--green);font-weight:600}
+  tr:nth-child(even) td{background:#FBFAF6}
+  td code{color:var(--navy);font-size:12.5px}
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media(max-width:760px){.compare{grid-template-columns:1fr}}
-  .compare .col{border-radius:14px;padding:22px;border:1px solid var(--line)}
-  .col.conops{background:linear-gradient(180deg,#0e2a3a,#0c1a2c)}
-  .col.opscon{background:linear-gradient(180deg,#1a1f3a,#10163a)}
+  .compare .col{border-radius:12px;padding:22px;border:1px solid var(--line)}
+  .col.conops{background:var(--green-soft)}
+  .col.opscon{background:var(--navy-soft)}
   .col h4{margin-top:0;font-size:16px}
-  .col.conops h4{color:var(--cyan)}
-  .col.opscon h4{color:#a5b4fc}
-
-  /* ===== Scenario timeline ===== */
-  .scene{border-left:2px solid var(--cyan);padding-left:20px;margin-left:8px}
-  .scene .step{position:relative;margin-bottom:18px}
-  .scene .step::before{
-    content:"";position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;
-    background:var(--cyan);box-shadow:0 0 0 4px rgba(34,211,238,.15);
-  }
-  .scene .step b{color:var(--cyan)}
-
-  /* ===== req list ===== */
-  .req{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,.02)}
-  .req .rid{flex:none;color:var(--cyan);font-family:Consolas,monospace;font-size:12.5px;padding-top:2px}
-  .req .rtext{font-size:14px;color:#d8e2f4}
+  .col.conops h4{color:var(--green)}
+  .col.opscon h4{color:var(--navy)}
+  .scene{border-left:2px solid var(--line);padding-left:20px;margin-left:8px}
+  .scene .step{position:relative;margin-bottom:16px}
+  .scene .step::before{content:"";position:absolute;left:-27px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--green);border:2px solid var(--bg)}
+  .scene .step b{color:var(--green)}
+  .req{display:flex;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--paper)}
+  .req .rid{flex:none;color:var(--green);font-family:Consolas,monospace;font-size:12.5px;padding-top:2px}
+  .req .rtext{font-size:14px;color:var(--ink)}
   .req .rwho{flex:none;font-size:12px;color:var(--muted);border-left:1px solid var(--line);padding-left:10px}
-
-  footer{
-    border-top:1px solid var(--line);padding:30px 22px;text-align:center;
-    color:var(--muted);font-size:13px;
-  }
-  .pill{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:3px;font-size:12.5px;color:var(--muted)}
+  .pill{display:inline-block;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:3px;font-size:12.5px;color:var(--ink2)}
+  footer{border-top:1px solid var(--line);padding:28px 22px;text-align:center;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
@@ -156,8 +90,7 @@
     —— 让可穿戴 / 植入式神经接口成为人体神经系统的"外置神经节"，在原生神经通路与机器智能之间建立双向闭环。
   </p>
   <div class="meta">
-    依据 <b>ISO/IEC/IEEE 29148:2018</b> 与郭宝柱《系统工程——基于国际标准过程的研究与实践》第 4 章 ·
-    <b>BRS</b>（表 4-1） &amp; <b>StRS</b>（表 4-5） · 小组作业 2
+    依据 <b>ISO/IEC/IEEE 29148:2018</b> 与郭宝柱《系统工程》第 4 章 · <b>BRS</b>（表 4-1）&amp; <b>StRS</b>（表 4-5） · 小组作业 2
   </div>
 </header>
 
@@ -181,9 +114,9 @@
     <div><h2>系统概述</h2><small>Problem statement &amp; solution class</small></div>
   </div>
   <div class="card">
-    <p><b>问题：</b>全球卒中、脊髓损伤、截肢、帕金森等神经功能障碍患者已超 1 亿，且随老龄化快速增长；同时，人类通过键盘 / 屏幕与机器交互的信息带宽仅约 25–40 bit/min，已成为人机协同作业（远程操控、危险环境、自动驾驶接管）的瓶颈。</p>
-    <p><b>机会：</b>侵入式 / 半侵入式 / 非侵入式电极阵列、边缘 AI 芯片与大模型解码技术同步成熟，使"读取运动意图—驱动执行器—回传感觉反馈"的闭环从实验室走向临床。</p>
-    <p><b>解决方案类（SoS 中的本系统）：</b>一套由 <b>神经采集子系统 → 边缘解码子系统 → 机器执行子系统 → 感觉反馈子系统 → 云端 AI 子系统</b>构成的双向闭环系统，作为人体中枢与外周神经系统的外置延伸。</p>
+    <p><b>问题：</b>卒中、脊髓损伤、截肢、帕金森等神经功能障碍患者已超 1 亿；而键鼠屏幕的人机交互带宽仅约 25–40 bit/min，成为远程操控、危险环境作业等协同场景的瓶颈。</p>
+    <p><b>机会：</b>电极阵列、边缘 AI 与解码技术同步成熟，使"读取意图—驱动执行—回传反馈"的闭环从实验室走向临床。</p>
+    <p><b>方案类：</b>由 <b>神经采集 → 边缘解码 → 机器执行 → 感觉反馈 → 云端 AI</b> 构成的双向闭环系统，作为人体中枢与外周神经的外置延伸。</p>
     <p style="margin-top:10px">
       <span class="badge">感知增强</span>
       <span class="badge">运动增强 / 康复</span>
@@ -203,35 +136,32 @@
   <div class="card">
     <h3>1. 简介</h3>
     <h4>1.1 业务目的</h4>
-    <p>在组织（一家专注神经接口的医工交叉企业 / 科室）层面，启动本项目旨在：① 抓住 BCI 技术从实验室向医疗器械转化的窗口；② 在神经康复、人机协同作业、运动感知增强三大业务域形成可注册、可收费的新产品线；③ 建立"医疗+消费"双轮驱动的业务模型。</p>
+    <p>抓住 BCI 从实验室走向医疗器械的窗口，在神经康复、人机协同、感知增强三个业务域形成可注册、可收费的产品线，建立"医疗 + 消费"双轮驱动的业务模型。</p>
     <h4>1.2 业务范围</h4>
     <ul>
       <li><b>业务域：</b>神经康复医疗（B2B2C）、特殊作业人机协同（B2B）、消费级增强设备（B2C）。</li>
-      <li><b>范围内系统：</b>植入式 / 半植入式 / 表面式电极阵列、边缘解码盒、外部执行器（假肢 / 外骨骼 / 机械臂 / 光标）、感觉反馈模块、云端训练与随访平台。</li>
-      <li><b>范围外：</b>纯诊断类脑电图设备、攻击性武器控制应用、纯算法授权（作为副产品而非主业）。</li>
+      <li><b>范围内系统：</b>植入 / 半植入 / 表面电极阵列、边缘解码盒、外部执行器、感觉反馈模块、云端训练与随访平台。</li>
+      <li><b>范围外：</b>纯诊断类脑电图设备、攻击性武器控制应用、纯算法授权（作为副产品）。</li>
     </ul>
     <h4>1.3 业务概况</h4>
-    <p>内部五大子系统闭环耦合；外部实体包括：三级医院康复科 / 神经外科、康复治疗师、NMPA / FDA 监管、伦理委员会、医保与商保、患者家属、云服务商、数据合规审计方。</p>
+    <p>内部五大子系统闭环耦合；外部实体包括医院康复科 / 神经外科、治疗师、NMPA / FDA、伦理委员会、医保商保、患者家属、云服务商与数据合规审计方。</p>
     <h4>1.4 定义</h4>
     <p>
       <span class="pill">BCI 脑机接口</span>
       <span class="pill">ECoG / 皮层脑电</span>
       <span class="pill">EMG 肌电</span>
       <span class="pill">闭环神经接口</span>
-      <span class="pill">ConOps 运营概念（组织层）</span>
-      <span class="pill">OpsCon 运行概念（系统层）</span>
-      <span class="pill">MOE 效能度量</span>
     </p>
     <h4>1.5 主要相关方（业务管理层）</h4>
-    <p>患者 / 残疾人、康复医师、神经外科医师、医院管理层、医疗器械监管机构、伦理委员会、医保 / 商保、企业内部研发与算法团队。</p>
+    <p>患者 / 残疾人、康复医师、神经外科医师、医院管理层、医疗器械监管机构、伦理委员会、医保 / 商保、企业研发与算法团队。</p>
   </div>
 
   <div class="card">
     <h3>3. 业务管理需求</h3>
     <h4>3.1 业务环境</h4>
     <ul>
-      <li><b>外部：</b>老龄化加剧、神经退行性疾病发病率上升；Neuralink / Synchron / 脑陆等国内外管线推进；AI 大模型显著提升神经信号解码率；监管按三类医疗器械从严审批；社会对"读脑"伦理高度敏感。</li>
-      <li><b>内部：</b>跨学科团队（神经科学 + 嵌入式 + AI + 临床医学），需同时满足临床有效性与工程可靠性。</li>
+      <li><b>外部：</b>老龄化与神经退行性疾病上升；国内外 BCI 管线推进；AI 提升解码率；按三类医疗器械从严审批；社会对"读脑"伦理高度敏感。</li>
+      <li><b>内部：</b>神经科学 + 嵌入式 + AI + 临床医学跨学科团队，须同时满足临床有效性与工程可靠性。</li>
     </ul>
     <h4>3.2 使命、目的与目标（SMART）</h4>
     <table>
@@ -245,14 +175,13 @@
     <h4>3.3 业务模型</h4>
     <ul>
       <li><b>B2B2C：</b>医院 / 康复中心按疗程收费（植入 + 训练包 + 随访订阅）。</li>
-      <li><b>B2B：</b>为高危作业、科研机构提供定制化神经接口套件与算法授权。</li>
-      <li><b>B2C：</b>消费级非侵入式头环 / 手环，主打专注力、运动辅助、无障碍输入。</li>
+      <li><b>B2B：</b>为高危作业、科研机构提供定制化套件与算法授权。</li>
+      <li><b>B2C：</b>消费级非侵入式头环 / 手环，主打专注力、运动辅助与无障碍输入。</li>
     </ul>
     <h4>3.4 信息环境</h4>
     <ul>
       <li>神经数据按医疗数据等保三级 + 个人信息保护法双重合规，端到端加密。</li>
-      <li>建设多中心临床数据平台，边缘侧实时推理 + 云端模型迭代。</li>
-      <li>跨项目数据资产统一治理，模型权重与原始信号分离管理。</li>
+      <li>边缘侧实时推理 + 云端模型迭代；模型权重与原始信号分离管理。</li>
     </ul>
   </div>
 
@@ -261,11 +190,11 @@
     <h4>4.1 业务过程（层次化）</h4>
     <div class="scene">
       <div class="step"><b>P1 临床评估：</b>影像、运动功能、认知评估，筛选适应证与禁忌证。</div>
-      <div class="step"><b>P2 方案定制：</b>确定植入 / 佩戴位置、电极通道数、康复目标。</div>
+      <div class="step"><b>P2 方案定制：</b>确定植入 / 佩戴位置、电极通道数与康复目标。</div>
       <div class="step"><b>P3 植入 / 佩戴与校准：</b>手术或门诊佩戴，3–4 周开机校准，采集个体化神经特征。</div>
       <div class="step"><b>P4 闭环训练 / 作业：</b>治疗师监督下进行康复训练或实际作业执行。</div>
       <div class="step"><b>P5 反馈与调整：</b>根据 MOE 指标调整解码参数与反馈强度。</div>
-      <div class="step"><b>P6 随访与退出：</b>定期复诊、远程升级；达到目标或出现禁忌时安全退出。</div>
+      <div class="step"><b>P6 随访与退出：</b>定期复诊、远程升级；达标或出现禁忌时安全退出。</div>
     </div>
     <h4>4.2 业务运营策略与规则</h4>
     <ul>
@@ -276,14 +205,12 @@
     <h4>4.3 业务运行约束</h4>
     <ul>
       <li>生物相容性满足 ISO 10993；植入物连续工作 ≥ 10 年。</li>
-      <li>端到端信号延迟 &lt; 100 ms（闭环感觉反馈 &lt; 50 ms）。</li>
-      <li>单次充电连续工作 ≥ 8 小时。</li>
+      <li>端到端信号延迟 &lt; 100 ms（闭环感觉反馈 &lt; 50 ms）；单次充电连续工作 ≥ 8 小时。</li>
     </ul>
     <h4>4.4 业务运行质量</h4>
     <ul>
       <li>闭环系统可用度 ≥ 99.9%；意图解码准确率 ≥ 90%。</li>
-      <li>患者使用满意度（ISO 9241-220）≥ 4.2 / 5。</li>
-      <li>紧急断开机制 100% 可触发、可审计。</li>
+      <li>患者使用满意度（ISO 9241-220）≥ 4.2 / 5；紧急断开机制 100% 可触发、可审计。</li>
     </ul>
     <h4>4.5 业务结构</h4>
     <p>设立医疗事业部（注册 + 临床）、消费电子事业部、神经 AI 研究院（算法 + 数据平台），与合作医院共建"神经康复联合实验室"。</p>
@@ -299,42 +226,38 @@
   <div class="compare">
     <div class="col conops">
       <h4>ConOps（组织 / 业务层）</h4>
-      <p>回答"<b>这家医院 / 这家公司未来打算怎么干</b>"。</p>
+      <p>回答"<b>这家医院 / 公司未来打算怎么干</b>"。</p>
       <ul>
         <li>合作三级医院在康复科设立"<b>神经康复中心</b>"，作为样板科室。</li>
-        <li>患者入院 → 多学科会诊（MDT）→ 定制植入 → 术后 4 周开机 → 每周 3 次闭环训练 → 出院后居家设备 + 远程随访。</li>
+        <li>患者入院 → MDT 会诊 → 定制植入 → 术后 4 周开机 → 每周 3 次闭环训练 → 出院居家设备 + 远程随访。</li>
         <li>消费级产品线进入数码渠道与无障碍公益项目。</li>
-        <li>数据回流至研究院，形成"临床—模型—硬件"飞轮。</li>
+        <li>数据回流研究院，形成"临床—模型—硬件"飞轮。</li>
       </ul>
     </div>
     <div class="col opscon" id="opscon">
       <h4>OpsCon（系统 / 实物层，预告）</h4>
-      <p>回答"<b>这一套设备具体怎么跑起来</b>"。详见后文 StRS 第 6 节。</p>
+      <p>回答"<b>这套设备具体怎么跑起来</b>"，详见后文 StRS 第 6 节。</p>
       <ul>
-        <li>电极采集神经电信号 → 边缘盒预处理 → AI 解码运动意图 → 驱动假肢 / 外骨骼 / 光标。</li>
-        <li>执行动作同时通过电刺激 / 振动回传触觉 / 位置感觉。</li>
+        <li>电极采集神经电信号 → 边缘盒预处理 → AI 解码意图 → 驱动假肢 / 外骨骼 / 光标。</li>
+        <li>执行动作同时经电刺激 / 振动回传触觉 / 位置感觉。</li>
         <li>任何环节人体可一键断开，回到原生神经通路。</li>
       </ul>
     </div>
   </div>
   <div class="card" style="margin-top:18px">
-    <h3>5. 提案系统初步运行概念（BRS §5）</h3>
+    <h3>5. 运行概念与生存周期</h3>
     <h4>5.1 初步运行概念</h4>
     <ul>
       <li><b>运行政策：</b>医疗线按三类医疗器械管理；消费线按普通电子设备 + 知情同意。</li>
       <li><b>用户类型：</b>患者（运动 / 认知障碍）、治疗师、植入医师、健康增强用户、运维工程师。</li>
       <li><b>支持环境：</b>手术室、康复训练室、家庭、办公室 / 作业现场。</li>
     </ul>
-    <h4>5.2 初步运行场景（摘要）</h4>
-    <p>S1 卒中后上肢康复；S2 截肢患者肌电控制智能假肢；S3 巡检人员远程控制机械臂在辐射环境作业。详见后文"运行场景"。</p>
-  </div>
-  <div class="card">
-    <h3>6–8. 生存周期概念 · 项目约束 · 附录</h3>
+    <h4>5.2 采办 · 部署 · 支持 · 弃置</h4>
     <ul>
-      <li><b>采办：</b>医院招标 + 自研并行；消费线 DTC。</li>
+      <li><b>采办：</b>医疗线医院招标 + 自研并行；消费线 DTC。</li>
       <li><b>部署：</b>植入由合作医院完成；消费线用户自助佩戴。</li>
       <li><b>支持：</b>远程 OTA + 48 小时现场响应。</li>
-      <li><b>弃置：</b>植入物可手术取出；设备回收后按医疗电子废弃物处理；神经数据物理删除并出具证明。</li>
+      <li><b>弃置：</b>植入物可手术取出；设备按医疗电子废弃物回收；神经数据物理删除并出具证明。</li>
       <li><b>项目约束：</b>首期预算 3000 万元，18 个月内完成注册临床。</li>
     </ul>
   </div>
@@ -347,7 +270,7 @@
     <div><h2>相关方列表与分析矩阵</h2><small>Stakeholder register — 教材表 4-3 框架</small></div>
   </div>
   <div class="card">
-    <p>按"直接相关方 / 有数据·信息·能量·物质·操作交互的相关方 / 施加影响·被影响的相关方"三类识别，并对态度、影响力、重要性评级（高 / 中 / 低）。</p>
+    <p>按"直接 / 有数据·信息·能量·物质·操作交互 / 施加影响·被影响"三类识别，并对态度、影响力、重要性评级（高 / 中 / 低）。</p>
     <table>
       <tr>
         <th style="width:60px">编号</th><th>相关方</th><th>类别</th>
@@ -391,8 +314,8 @@
     </div>
     <h4>4.2 系统运行策略与规则</h4>
     <ul>
-      <li>解码置信度 &lt; 阈值时，系统进入"保持姿态 + 提示治疗师"的安全状态。</li>
-      <li>所有云端模型更新必须在非训练时段推送，并可回滚。</li>
+      <li>解码置信度低于阈值时，系统进入"保持姿态 + 提示治疗师"的安全状态。</li>
+      <li>云端模型更新须在非训练时段推送，并可回滚。</li>
     </ul>
     <h4>4.3 系统运行约束</h4>
     <ul>
@@ -418,13 +341,13 @@
         <ul>
           <li>无需刻意学习即可"用意念"控制外部设备。</li>
           <li>植入 / 佩戴无明显异物感与热感。</li>
-          <li>可随时查看自己的康复进度数据。</li>
+          <li>可随时查看康复进度数据。</li>
         </ul>
       </div>
       <div>
         <h4>医师 / 治疗师（S2, S4）</h4>
         <ul>
-          <li>实时看到解码置信度、异常信号告警。</li>
+          <li>实时看到解码置信度与异常信号告警。</li>
           <li>可按疗程调整训练强度与反馈增益。</li>
           <li>自动生成可导出的康复报告。</li>
         </ul>
@@ -449,15 +372,14 @@
 
   <div class="card">
     <h3>6. 详细生存周期概念（OpsCon 展开）</h3>
-    <h4>6.1 运行概念（OpsCon）</h4>
-    <p>本系统是人体神经系统的<b>可插拔外置层</b>：它不取代大脑与脊髓，而是在外周和皮层之间搭桥。正常运行时，神经信号被"读取—放大—翻译"成机器动作，再把机器侧的感觉"翻译"回神经刺激；当用户主动断开或系统检测到异常，桥立刻断开，人体回到原生状态。</p>
-    <h4>6.2 运行场景（见下一节）</h4>
-    <h4>6.3–6.6 采办 / 部署 / 支持 / 弃置概念</h4>
+    <h4>6.1 运行概念</h4>
+    <p>本系统是人体神经系统的<b>可插拔外置层</b>：不取代大脑与脊髓，只在外周和皮层之间搭桥。正常运行时神经信号被"读取—放大—翻译"成机器动作，再把机器侧感觉"翻译"回神经刺激；用户主动断开或检测到异常时，桥立即断开，人体回到原生状态。</p>
+    <h4>6.2 采办 / 部署 / 支持 / 弃置</h4>
     <ul>
       <li><b>采办：</b>医疗线随医院康复设备招标；消费线电商直营。</li>
       <li><b>部署：</b>植入式由神经外科在手术室完成；表面式用户门诊或居家自助佩戴。</li>
       <li><b>支持：</b>7×12 远程客服，重大故障 48 h 上门。</li>
-      <li><b>弃置：</b>到期或患者要求时，手术取出植入物；设备回收；神经数据出具删除证明。</li>
+      <li><b>弃置：</b>到期或患者要求时手术取出植入物；设备回收；神经数据出具删除证明。</li>
     </ul>
   </div>
 </section>
@@ -473,9 +395,9 @@
     <h3>场景 S1 · 卒中后上肢闭环康复</h3>
     <div class="scene">
       <div class="step"><b>入院：</b>62 岁卒中后左侧上肢偏瘫患者入院，Fugl-Meyer 评分 28 分。</div>
-      <div class="step"><b>佩戴：</b>在上肢佩戴表面肌电 + 惯性单元，肘关节处加电刺激反馈。</div>
+      <div class="step"><b>佩戴：</b>上肢佩戴表面肌电 + 惯性单元，肘关节处加电刺激反馈。</div>
       <div class="step"><b>训练：</b>患者试图抓握水杯，系统采集残存肌电 → 解码意图 → 驱动外骨骼辅助抬手 → 指尖压力传感器回传触觉。</div>
-      <div class="step"><b>调整：</b>治疗师在大屏看到解码置信度 0.82，适当减小助力，迫使患者多发力。</div>
+      <div class="step"><b>调整：</b>治疗师看到解码置信度 0.82，适当减小助力，迫使患者多发力。</div>
       <div class="step"><b>结果：</b>12 周后 Fugl-Meyer 评分提升至 46 分，达到业务目标。</div>
     </div>
   </div>
@@ -485,7 +407,7 @@
     <div class="scene">
       <div class="step"><b>残肢植入：</b>28 岁前臂截肢患者接受肌电电极植入，4 周后开机。</div>
       <div class="step"><b>日常：</b>想"拿起杯子"→ 假肢手指在 80 ms 内合拢到合适力度 → 振动马达回传杯子重量。</div>
-      <div class="step"><b>安全：</b>有一次解码异常导致手突然松开，患者下意识按了虎口处的物理按钮，假肢立刻锁止。</div>
+      <div class="step"><b>安全：</b>一次解码异常导致手突然松开，患者按下虎口物理按钮，假肢立刻锁止。</div>
     </div>
   </div>
 
@@ -493,8 +415,8 @@
     <h3>场景 S3 · 高危作业远程操控</h3>
     <div class="scene">
       <div class="step"><b>作业：</b>巡检员在干净控制室佩戴非侵入式头环 + 数据手套，远程辐射环境内的机械臂随其手部动作同步运动。</div>
-      <div class="step"><b>反馈：</b>机械臂末端的力传感器把阻力传回手套，操作员"感觉到"拧阀门的力度。</div>
-      <div class="step"><b>退出：</b>换班时操作员摘下设备，系统自动归档当班操作日志。</div>
+      <div class="step"><b>反馈：</b>机械臂末端力传感器把阻力传回手套，操作员"感觉到"拧阀门的力度。</div>
+      <div class="step"><b>退出：</b>换班时摘下设备，系统自动归档当班操作日志。</div>
     </div>
   </div>
 </section>
